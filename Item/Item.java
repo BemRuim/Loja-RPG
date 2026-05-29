@@ -1,3 +1,4 @@
+package Item;
 public class Item {
     private String nome;
     private double valor;
@@ -23,3 +24,4 @@ public class Item {
 
 
 }
+

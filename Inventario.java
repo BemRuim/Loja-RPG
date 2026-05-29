@@ -1,4 +1,7 @@
 import java.util.Scanner;
+
+import Item.Item;
+
 import java.util.ArrayList;
 
 public class Inventario {

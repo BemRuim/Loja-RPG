@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 
+import Item.Item;
+
 public class Loja {
 
   private ArrayList<Item> itensLoja = new ArrayList<>();
