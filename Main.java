@@ -1,4 +1,9 @@
 import java.util.Scanner;
+
+import Inventario.Inventario;
+import Jogadores.Jogador;
+import Lojas.Loja;
+
 import java.util.InputMismatchException;
 public class Main{
     public static void main(String[] args) {
@@ -6,7 +11,7 @@ public class Main{
 
 
     
-        Jogador  j1 = new Jogador("Isagi", 1000, new Inventario());
+        Jogador  j1 = new Jogador("Isagi", 15000, 50, 100, 30, 20, new Inventario());
         Loja loja = new Loja();
 
        int opcao = -1;

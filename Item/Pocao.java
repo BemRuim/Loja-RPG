@@ -1,12 +1,15 @@
 package Item;
 
 public class Pocao extends Item{
-    public Pocao(String nome, double valor, String raridade){
+    private int cura;
+
+    public Pocao(String nome, double valor, String raridade, int cura){
         super(nome, valor, raridade);
+        this.cura = cura;
     }
 
     
-    private int cura;
+   
 
     public int getCura(){
         return cura;

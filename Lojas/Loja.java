@@ -1,16 +1,20 @@
+package Lojas;
 import java.util.ArrayList;
-
+import Jogadores.Jogador;
 import Item.Item;
+import Item.Armadura;
+import Item.Arma;
+import Item.Pocao;
 
 public class Loja {
 
   private ArrayList<Item> itensLoja = new ArrayList<>();
     
-  Loja(){
-    itensLoja.add(new Item("Adaga", 360.6, "Raro"));
-    itensLoja.add(new Item("Botas", 896.7, "Épico"));
-    itensLoja.add(new Item("Arco", 100, "Comum"));
-
+  public Loja(){
+    itensLoja.add(new Arma("Adaga", 360.6, "Raro", 50));
+    itensLoja.add(new Pocao("Poção de cura", 250, "Epico", 50));
+    itensLoja.add(new Arma("Arco", 100, "Comum", 20));
+    itensLoja.add(new Armadura("Armadura de couro", 150, "Comum", 30));
 
   }
 

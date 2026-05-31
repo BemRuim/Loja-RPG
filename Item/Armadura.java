@@ -1,13 +1,16 @@
 package Item;
 
 public class Armadura extends Item{
-    public Armadura(String nome, double valor, String raridade){
+      private int armadura;
+
+    public Armadura(String nome, double valor, String raridade, int armadura){
         super(nome, valor, raridade);
+        this.armadura = armadura;
     }
 
-    private int armadura;
+   
 
-    int getArmadura(){
+    public int getArmadura(){
         return armadura;
     }
 }
