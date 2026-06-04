@@ -19,8 +19,6 @@ public class Inventario {
             System.out.println("Valor: "+ itens.get(i).getValor());
             System.out.println("Raridade: "+ itens.get(i).getRaridade());
         }
-        }else{
-            System.out.println("Inventario vazio! ");
         }
         
     }
@@ -81,5 +79,6 @@ public class Inventario {
             System.out.println("Item não encontrado! ");
         }
    }
+
 
 }
