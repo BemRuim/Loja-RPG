@@ -11,7 +11,7 @@ public class Main{
 
 
     
-        Jogador  j1 = new Jogador("Isagi", 15000, 50, 100, 30, 20, new Inventario());
+        Jogador  j1 = new Jogador("Isagi", 15000, 90, 100, 30, 20, new Inventario());
         Loja loja = new Loja();
 
        int opcao = -1;
@@ -61,13 +61,16 @@ public class Main{
                         "        INVENTÁRIO\n" + //
                         "============================="
                     );
-
+                    System.out.println("Vida: "+ j1.getVida()+ "/" + j1.getVidaMaxima());
+                    System.out.println("Dano: "+ j1.getDano());
+                    System.out.println("Defesa: "+ j1.getDefesa());
                     System.out.println("Dinheiro: "+ j1.getDinheiro());
                     System.out.println(" ");
                     j1.getInventario().mostrarItens();
 
                     System.out.println("=============================");
                     System.out.println("1- Vender item");
+                    System.out.println("2- selecionar item");
                     System.out.println("0- Voltar");
                     opcao = scanner.nextInt();
                     scanner.nextLine();
@@ -77,7 +80,14 @@ public class Main{
                         numeroVender = scanner.nextInt();
                         scanner.nextLine();
                         loja.venderItem(j1, numeroVender);
-                    }else if(opcao == 0){
+                    }else if (opcao == 2) {
+                        System.out.println("Digite o numero do item que deseja usar: ");
+                        int itemEscolhido = scanner.nextInt();
+                        scanner.nextLine();
+                        j1.getInventario().usarItem(j1, itemEscolhido);
+                    }
+                    
+                    else if(opcao == 0){
                         opcao = -1;
                     }else{
                         System.out.println("Item não encontrado! ");

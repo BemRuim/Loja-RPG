@@ -15,7 +15,7 @@ public class Loja {
     itensLoja.add(new Pocao("Poção de cura", 250, "Epico", 50));
     itensLoja.add(new Arma("Arco", 100, "Comum", 20));
     itensLoja.add(new Armadura("Armadura de couro", 150, "Comum", 30));
-
+    itensLoja.add(new Armadura("Armadura de aço", 500, "Raro", 80));
   }
 
   public void mostrarItems(){
@@ -48,8 +48,8 @@ public class Loja {
 
   public void venderItem(Jogador jogador, int indice){
     if (indice < jogador.getInventario().quantidadeItens() && indice >= 0) {
-      jogador.receberDinheiro(jogador.getInventario().selecionarItem().get(indice).getValor());
-      itensLoja.add(jogador.getInventario().selecionarItem().get(indice));
+      jogador.receberDinheiro(jogador.getInventario().listaItem().get(indice).getValor());
+      itensLoja.add(jogador.getInventario().listaItem().get(indice));
       jogador.getInventario().removerItem(indice);
       
 

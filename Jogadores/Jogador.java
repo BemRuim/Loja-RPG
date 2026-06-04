@@ -2,7 +2,6 @@ package Jogadores;
 import Inventario.Inventario;
 import Item.Armadura;
 import Item.Arma;
-import Item.Pocao;
 
 
 public class Jogador {
@@ -14,6 +13,8 @@ public class Jogador {
     private int defesa;
     private Inventario inventarioJogador;
 
+    private Arma armaEquipada;
+    private Armadura armaduraEquipada;
     public Jogador(String nome, double dinheiro, int vida, int vidaMaxima, int dano, int defesa, Inventario inventarioJogador){
         this.nome = nome;
         this.dinheiro = dinheiro;
@@ -31,6 +32,36 @@ public class Jogador {
     public double getDinheiro(){
         return dinheiro;
     }
+
+    public int getVida(){
+        return vida;
+    }
+
+
+    public int getVidaMaxima(){
+        return vidaMaxima;
+    }
+
+    public int getDano(){
+        if (armaEquipada == null) {
+            return dano;
+        }else{
+            return dano + armaEquipada.getDano();
+        }
+        
+    }
+
+    public int getDefesa(){
+        if (armaduraEquipada == null) {
+            return defesa;
+        }else{
+            return defesa + armaduraEquipada.getArmadura();
+        }
+        
+    }
+
+
+
 
     public Inventario getInventario(){
         return inventarioJogador;
@@ -71,11 +102,14 @@ public class Jogador {
     }
 
     public void equiparArmadura(Armadura armadura){
-        defesa += armadura.getArmadura();
+        int defesaTotal =  defesa += armadura.getArmadura();
+        defesa = defesaTotal;
     }
 
     public void equiparArma(Arma arma){
-        dano += arma.getDano();
+       armaEquipada = arma;
+      
+       
     }
 
   
